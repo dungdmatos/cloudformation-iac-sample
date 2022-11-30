@@ -1,1 +1,1 @@
-kubernetes-iac-sample update
+kubernetes-iac-sample
