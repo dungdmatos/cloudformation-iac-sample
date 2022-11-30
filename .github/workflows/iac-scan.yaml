@@ -1,0 +1,28 @@
+
+
+# this file is *not* meant to cover or endorse the use of GitHub Actions, but rather to
+# help test this project
+
+name: Test-IAC
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: ["main"]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Run docker iac image
+        uses: dungdmatos/sample-git-scan-action@main
+        with:
+          scan_dir: templates
+          working_dir: ${{github.workspace}}
+          git_url: "${{ github.server_url }}/${{ github.repository }}"
