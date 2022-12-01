@@ -25,5 +25,5 @@ jobs:
         with:
           scan_dir: templates
           working_dir: ${{github.workspace}}
-          git_url: "${{ github.server_url }}/${{ github.repository }}"
+          git_url: ${{ github.server_url }}/${{ github.repository }}
           api_key: ${{ secrets.MATOS_API_KEY }}
